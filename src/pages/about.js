@@ -1,13 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import Navigation from "../components/navigation"
 
 export default function About() {
     return (
         <div>
-            <h1>TimeBlockApp</h1>
-
-            <Link to="/">Main</Link>
-            <Link to="/get-started/">Begin</Link>
+            <Navigation></Navigation>
             
             <p>
                 It is known that working on mulltiple things at the same time

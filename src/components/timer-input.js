@@ -1,23 +1,50 @@
 import React from "react"
 
-// This function is a component which is used to take the time input for a block
-export default function TimerInput() {
-    return (
-        <div>
-            {/* Task title input */}
-            <label for="task-name">Task</label>
-            <input id="task-name" type="textbox"></input>
-            {/* Hour data input */}
-            <label for="hours">Hours</label>
-            <input id="hours" type="number" min="0" max="23"></input>
+import Timer from "../components/timer"
 
-            {/* Minute data input */}
-            <label for="minutes">Minutes</label>
-            <input id="minutes" type="number" min="0" max="59"></input>
+export default class TimerInput extends React.Component {
+    state = {
+        taskName: "",
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    }
 
-            {/* Seconds data input */}
-            <label for="seconds">Seconds</label>
-            <input id="seconds" type="number" min="0" max="59"></input>
-        </div>
-    )
+    handleSubmit = event => {
+        Timer(this.state);
+    }
+
+    render() {
+        return (
+            <div>
+            <form>
+                {/* Task title input */}
+                <label>
+                    Task
+                    <input type="textbox" name="taskName"></input>
+                </label>
+
+                {/* Hour data input */}
+                <label>
+                    Hours
+                    <input type="number" name="hours" min="0" max="23"></input>
+                </label>
+
+                {/* Minute data input */}
+                <label>
+                    Minutes
+                    <input id="minutes" type="number" name="minutes" min="0" max="59"></input>
+                </label>
+
+                {/* Seconds data input */}
+                <label>
+                    Seconds
+                    <input id="seconds" type="number" name="seconds" min="0" max="59"></input>
+                </label>
+
+                <button type="submit">Add timer</button>
+            </form>
+            </div>
+        )
+    }
 }

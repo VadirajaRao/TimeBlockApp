@@ -1,15 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
 
-// import TimerInput from "../components/timer-input"
+import Navigation from "../components/navigation"
+import TimerInput from "../components/timer-input"
 
+// This function generates the page where all the application logic resides
 export default function GetStarted() {
     return (
         <div>
-            <h1>TimeBlockApp</h1>
-
-            <Link to="/">Main</Link>
-            <Link to="/get-started/">Begin</Link>
+            <Navigation></Navigation>
+            <TimerInput></TimerInput>
         </div>
     )
 }
